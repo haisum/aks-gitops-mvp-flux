@@ -11,7 +11,7 @@ h2c:
 
 image:
   repository: haisumb/helloworld
-  tag: 20200301.16.e5b763a
+  tag: develop-20200302163321.48276268.dafc306
   pullPolicy: IfNotPresent
 
 service:

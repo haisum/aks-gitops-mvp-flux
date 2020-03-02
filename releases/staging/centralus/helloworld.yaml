@@ -3,7 +3,7 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: helloworld-staging
-  namespace: staging
+  namespace: default
   annotations:
     fluxcd.io/automated: "true"
     filter.fluxcd.io/chart-image: glob:develop-*
@@ -16,5 +16,5 @@ spec:
   values:
     image:
       repository: haisumb/helloworld
-      tag: 0.4.11
+      tag: develop-20200302163321.48276268.dafc306
     replicaCount: 3
