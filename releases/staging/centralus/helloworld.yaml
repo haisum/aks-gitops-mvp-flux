@@ -1,3 +1,4 @@
+---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
@@ -16,4 +17,5 @@ spec:
     image:
       repository: haisumb/helloworld
       tag: develop-20200302163321.48276268.dafc306
+      nameOverride: helloworld
     replicaCount: 3
