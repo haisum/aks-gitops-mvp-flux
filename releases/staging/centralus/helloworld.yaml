@@ -1,0 +1,20 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: helloworld-staging
+  namespace: staging
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: glob:develop-*
+spec:
+  releaseName: helloworld-staging
+  chart:
+    git: git@github.com:haisumb/aks-gitops-mvp-flux
+    path: charts/generic
+    ref: master
+  values:
+    image:
+      repository: haisumb/helloworld
+      tag: 0.4.11
+    replicaCount: 3

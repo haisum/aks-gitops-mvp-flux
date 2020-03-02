@@ -1,0 +1,12 @@
+apiVersion: v1
+version: 0.0.1
+appVersion: 0.0.1
+name: generic
+engine: gotpl
+description: Generic Helm chart for Kubernetes
+home: https://github.com/haisumb/aks-gitops-mvp-flux
+maintainers:
+- email: haisumb@boxboat.com
+  name: haisumb
+sources:
+- https://github.com/haisumb/aks-gitops-mvp-flux/charts
