@@ -17,6 +17,5 @@ spec:
     image:
       repository: haisumb/helloworld
       tag: develop-20200303171028.48945854.e9ba30c
-      nameOverride: helloworld
-      fullnameOverride: helloworld
+    nameOverride: helloworld
     replicaCount: 3
