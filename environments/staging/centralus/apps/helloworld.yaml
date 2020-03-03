@@ -2,13 +2,13 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: helloworld
+  name: helloworld-test
   namespace: default
   annotations:
     fluxcd.io/automated: "true"
     filter.fluxcd.io/chart-image: glob:develop-*
 spec:
-  releaseName: helloworld
+  releaseName: helloworld-test
   chart:
     git: git@github.com:haisumb/aks-gitops-mvp-flux
     path: environments/staging/centralus/charts/generic
