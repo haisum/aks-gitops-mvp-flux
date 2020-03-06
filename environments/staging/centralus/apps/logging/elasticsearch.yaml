@@ -1,0 +1,32 @@
+---
+
+# helm repo add elastic https://helm.elastic.co
+# helm repo update
+# helm install elastic/elasticsearch \
+#        --name elasticsearch \ 
+#        --namespace logging \
+#        --set replicas=1 \
+#        --set minimumMasterNodes=1 \
+#        --set volumeClaimTemplate.accessModes[0]=ReadWriteMany \
+#        --set resources.requests.storage=100Gi
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: elasticsearch
+  namespace: logging
+spec:
+  releaseName: elasticsearch
+  chart:
+    repository: https://helm.elastic.co
+    name: elastic/elasticsearch
+  values:
+    replicas: 1
+    minimumMasterNodes: 1
+    volumeClaimTemplate:
+      accessModes:
+      - ReadWriteMany
+    resources:
+      requests:
+        storage: 100 Gi
+
+

@@ -1,0 +1,18 @@
+---
+# helm install elastic/kibana \
+#      --name kibana \
+#      --namespace logging
+# port defaults to 5601
+
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: kibana
+  namespace: logging
+spec:
+  releaseName: kibana
+  chart:
+    repository: https://helm.elastic.co
+    name: elastic/kibana
+
+

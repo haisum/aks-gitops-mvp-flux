@@ -1,0 +1,24 @@
+---
+
+# helm install stable/fluent-bit \
+#      --name fluent-bit \
+#      --namespace logging \
+#      --set backend.type=es \
+#      --set backend.es.host=elasticsearch-master
+
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: fluent-bit
+  namespace: logging
+spec:
+  releaseName: fluent-bit
+  chart:
+    name: stable/fluent-bit
+  values:
+    backend:
+      type: es
+      es:
+        host: elasticsearch-master
+
+
