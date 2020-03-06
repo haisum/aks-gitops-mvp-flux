@@ -18,7 +18,7 @@ spec:
   releaseName: elasticsearch
   chart:
     repository: https://helm.elastic.co
-    name: elastic/elasticsearch
+    name: elasticsearch
     version: 7.6.1
   values:
     replicas: 1

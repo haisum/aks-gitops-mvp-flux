@@ -15,7 +15,7 @@ spec:
   releaseName: fluent-bit
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com
-    name: stable/fluent-bit
+    name: fluent-bit
     version: 2.8.11
   values:
     backend:
