@@ -19,15 +19,9 @@ spec:
   chart:
     repository: https://helm.elastic.co
     name: elasticsearch
-    version: 7.6.1
+    version: 7.4.0
   values:
     replicas: 1
     minimumMasterNodes: 1
-    volumeClaimTemplate:
-      accessModes:
-      - ReadWriteMany
-    resources:
-      requests:
-        storage: 100 Gi
 
 
