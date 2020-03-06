@@ -14,5 +14,6 @@ spec:
   chart:
     repository: https://helm.elastic.co
     name: elastic/kibana
+    version: 7.6.1
 
 

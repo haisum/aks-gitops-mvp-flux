@@ -19,6 +19,7 @@ spec:
   chart:
     repository: https://helm.elastic.co
     name: elastic/elasticsearch
+    version: 7.6.1
   values:
     replicas: 1
     minimumMasterNodes: 1
