@@ -17,5 +17,4 @@ spec:
       name: http
   selector:
     app: {{ template "app.name" . }}
-    release: {{ .Release.Name }}
 {{- end }}
