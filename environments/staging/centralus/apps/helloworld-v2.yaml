@@ -8,7 +8,7 @@ metadata:
     fluxcd.io/automated: "true"
     filter.fluxcd.io/chart-image: glob:feature-greet-*
 spec:
-  releaseName: helloworld
+  releaseName: helloworldv2
   chart:
     git: git@github.com:haisumb/aks-gitops-mvp-flux
     path: environments/staging/centralus/charts/generic
