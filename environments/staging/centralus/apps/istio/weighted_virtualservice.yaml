@@ -7,6 +7,8 @@ metadata:
 spec:
   hosts:
   - helloworld.com
+  gateways:
+  - default-gateway
   http:
   - route:
     - destination:
