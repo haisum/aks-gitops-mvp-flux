@@ -2,13 +2,13 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: helloworld-greet
+  name: helloworld
   namespace: default
   annotations:
     fluxcd.io/automated: "true"
     filter.fluxcd.io/chart-image: glob:feature-greet-*
 spec:
-  releaseName: helloworld-greet
+  releaseName: helloworld
   chart:
     git: git@github.com:haisumb/aks-gitops-mvp-flux
     path: environments/staging/centralus/charts/generic
@@ -19,3 +19,4 @@ spec:
       tag: feature-greet-20200308035226.51581345.7f1f9ca
     nameOverride: helloworld
     replicaCount: 3
+    version: "v2"

@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   hosts:
-  - "rentpathtest.com"
+  - "example.com"
   gateways:
   - default-gateway
   http:

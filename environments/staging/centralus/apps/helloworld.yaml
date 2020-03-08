@@ -19,3 +19,4 @@ spec:
       tag: develop-20200306170540.50895454.30d4293
     nameOverride: helloworld
     replicaCount: 3
+    version: "v1"

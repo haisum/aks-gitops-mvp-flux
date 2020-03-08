@@ -2,6 +2,7 @@
 
 replicaCount: 1
 logLevel: info
+version: "v1"
 faults:
   delay: false
   error: false

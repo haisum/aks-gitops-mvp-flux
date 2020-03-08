@@ -12,5 +12,5 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - "rentpathtest.com"
-    - "rentpath.com"
+    - "example.com"
+    - "helloworld.com"

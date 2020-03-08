@@ -9,6 +9,7 @@ metadata:
     chart: {{ template "app.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+    version: {{ .Values.version }}
 spec:
   {{- if not .Values.hpa.enabled }}
   replicas: {{ .Values.replicaCount }}
