@@ -1,0 +1,23 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: default-virtual-service
+  namespace: default
+spec:
+  hosts:
+  - "rentpathtest.com"
+  gateways:
+  - default-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /helloworld
+    - uri:
+        prefix: /hello
+    rewrite:
+      uri: "/"
+    route:
+    - destination:
+        port:
+          number: 9898
+        host: helloworld
