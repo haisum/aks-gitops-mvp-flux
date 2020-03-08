@@ -17,6 +17,7 @@ spec:
     image:
       repository: haisumb/helloworld
       tag: feature-greet-20200308035226.51581345.7f1f9ca
+    fullnameOverride: helloworldv2
     nameOverride: helloworld
     replicaCount: 3
     version: "v2"

@@ -27,6 +27,7 @@ spec:
       labels:
         app: {{ template "app.name" . }}
         release: {{ .Release.Name }}
+        version: {{ .Values.version }}
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "{{ .Values.service.httpPort }}"
