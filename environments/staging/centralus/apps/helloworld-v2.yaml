@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: helloworld
+  name: helloworldv2
   namespace: default
   annotations:
     fluxcd.io/automated: "true"
