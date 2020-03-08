@@ -52,6 +52,11 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
+# Can disable istio by passing appropriate annotation
+deployment:
+  annotations:
+    # sidecar.istio.io/inject: "false"
+
 resources:
   limits:
   requests:

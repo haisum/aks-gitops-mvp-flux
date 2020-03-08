@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ template "app.fullname" . }}
+  annotations:
+{{ toYaml .Values.deployment.annotations | indent 4 }}
   labels:
     app: {{ template "app.name" . }}
     chart: {{ template "app.chart" . }}
