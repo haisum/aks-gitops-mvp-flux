@@ -18,7 +18,7 @@ spec:
       repository: haisumb/helloworld
       tag: develop-20200306170540.50895454.30d4293
     nameOverride: helloworld
-    replicaCount: 3
+    replicaCount: 2
     version: "v1"
     service:
       enabled: true

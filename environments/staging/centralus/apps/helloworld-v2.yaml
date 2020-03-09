@@ -19,7 +19,7 @@ spec:
       tag: feature-greet-20200308035226.51581345.7f1f9ca
     fullnameOverride: helloworldv2
     nameOverride: helloworld
-    replicaCount: 3
+    replicaCount: 2
     version: "v2"
     service:
       enabled: true
