@@ -58,11 +58,11 @@ canary:
   loadtest:
     enabled: false
     # load tester address
-    url: http://flagger-loadtester.test/
+    url: http://flagger-loadtester.default/
   helmtest:
     enabled: false
     # helm tester address
-    url: http://flagger-helmtester.kube-system/
+    url: http://flagger-helmtester-loadtester.kube-system/
 
 resources:
   limits:
