@@ -11,6 +11,6 @@ spec:
   releaseName: flagger-helmtester
   chart:
     repository: https://flagger.app
-    name: flagger-loadtester
+    name: loadtester
     version: 0.13.0
 
