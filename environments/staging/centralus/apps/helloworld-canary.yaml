@@ -10,13 +10,13 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: helloworldCanary
+  name: helloworld-canary
   namespace: default
   annotations:
     fluxcd.io/automated: "true"
     filter.fluxcd.io/chart-image: glob:feature-canary-*
 spec:
-  releaseName: helloworldCanary
+  releaseName: helloworld-canary
   chart:
     git: git@github.com:haisumb/aks-gitops-mvp-flux
     path: environments/staging/centralus/charts/generic
@@ -25,8 +25,8 @@ spec:
     image:
       repository: haisumb/helloworld
       tag: feature-canary-20200309150856.52344222.48b4886
-    fullnameOverride: helloworldCanary
-    nameOverride: helloworldCanary
+    fullnameOverride: helloworld-canary
+    nameOverride: helloworld-canary
     replicaCount: 3
     canary:
       enabled: true
