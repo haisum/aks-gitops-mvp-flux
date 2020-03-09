@@ -40,6 +40,7 @@ spec:
     - name: request-duration
       threshold: {{ .Values.canary.thresholds.latency }}
       interval: 1m
+    {{- if or (.Values.canary.helmtest.enabled ) (.Values.canary.loadtest.enabled) }}
     webhooks:
       {{- if .Values.canary.helmtest.enabled }}
       - name: "helm test"
@@ -57,4 +58,5 @@ spec:
         metadata:
           cmd: "hey -z 1m -q 5 -c 2 http://{{ template "app.fullname" . }}.{{ .Release.Namespace }}:{{ .Values.service.port }}"
       {{- end }}
+    {{- end }}
 {{- end }}
