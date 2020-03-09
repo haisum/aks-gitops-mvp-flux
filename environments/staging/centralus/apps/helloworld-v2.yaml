@@ -21,3 +21,6 @@ spec:
     nameOverride: helloworld
     replicaCount: 3
     version: "v2"
+    service:
+      enabled: true
+      port: 9898

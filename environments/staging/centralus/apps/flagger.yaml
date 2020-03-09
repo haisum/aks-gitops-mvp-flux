@@ -1,0 +1,24 @@
+---
+# helm repo add flagger https://flagger.app
+# helm upgrade -i flagger flagger/flagger \
+# --namespace=istio-system \
+# --set crd.create=false \
+# --set meshProvider=istio \
+# --set metricsServer=http://prometheus:9090
+
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: flagger
+  namespace: istio-system
+spec:
+  releaseName: flux
+  chart:
+    repository: https://flagger.app
+    name: flagger
+    version: 0.24.0
+  values:
+    meshProvider: istio
+    metricsServer: http://prometheus:9090
+
+
