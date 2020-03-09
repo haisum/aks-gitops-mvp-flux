@@ -12,7 +12,7 @@ metadata:
   name: flagger
   namespace: istio-system
 spec:
-  releaseName: flux
+  releaseName: flagger
   chart:
     repository: https://flagger.app
     name: flagger
