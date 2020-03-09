@@ -4,6 +4,8 @@
 # --set nameOverride=frontend \
 # --set backend=http://backend.test:9898/echo \
 # --set canary.enabled=true \
+# --set canary.loadtest.enabled=true \
+# --set canary.helmtest.enabled=true \
 # --set canary.istioIngress.enabled=true \
 # --set canary.istioIngress.gateway=public-gateway.istio-system.svc.cluster.local \
 # --set canary.istioIngress.host=frontend.istio.example.com
@@ -30,6 +32,10 @@ spec:
     replicaCount: 3
     canary:
       enabled: true
+      loadtest:
+        enabled: true
+      helmtest:
+        enabled: true
       istioIngress:
         enabled: true
         gateway: public-gateway.istio-system.svc.cluster.local

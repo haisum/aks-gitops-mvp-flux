@@ -1,0 +1,16 @@
+# helm upgrade -i flagger-loadtester flagger/loadtester \
+# --namespace=test
+
+
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: flagger-loadtester
+  namespace: default
+spec:
+  releaseName: flagger-loadtester
+  chart:
+    repository: https://flagger.app
+    name: flagger-loadtester
+    version: 0.13.0
+

@@ -1,0 +1,16 @@
+# helm upgrade -i flagger-helmtester flagger/loadtester \
+# --namespace=kube-system
+
+
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: flagger-helmtester
+  namespace: kube-system
+spec:
+  releaseName: flagger-helmtester
+  chart:
+    repository: https://flagger.app
+    name: flagger-loadtester
+    version: 0.13.0
+

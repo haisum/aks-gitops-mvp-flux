@@ -18,8 +18,6 @@ spec:
     name: flagger
     version: 0.24.0
   values:
-    crd:
-      create: false
     meshProvider: istio
     metricsServer: http://prometheus:9090
 
