@@ -5,6 +5,9 @@
 # --set crd.create=false \
 # --set meshProvider=istio \
 # --set metricsServer=http://prometheus:9090
+# --set slack.url=https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK \
+# --set slack.channel=general \
+# --set slack.user=flagger
 
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -20,5 +23,9 @@ spec:
   values:
     meshProvider: istio
     metricsServer: http://prometheus:9090
+    slack:
+      url: https://hooks.slack.com/services/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
+      channel: haisum
+      user: flagger
 
 
