@@ -25,7 +25,7 @@ spec:
     metricsServer: http://prometheus:9090
     env:
     - name: SLACK_URL
-     valueFrom:
+      valueFrom:
        secretKeyRef:
          name: slack
          key: url
