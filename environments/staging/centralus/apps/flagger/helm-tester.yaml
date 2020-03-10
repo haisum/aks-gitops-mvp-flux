@@ -6,7 +6,7 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: flagger-helmtester
-  namespace: kube-system
+  namespace: default
 spec:
   releaseName: flagger-helmtester
   chart:
