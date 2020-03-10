@@ -23,8 +23,13 @@ spec:
   values:
     meshProvider: istio
     metricsServer: http://prometheus:9090
+    env:
+    - name: SLACK_URL
+     valueFrom:
+       secretKeyRef:
+         name: slack
+         key: url
     slack:
-      url: https://hooks.slack.com/services/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
       channel: haisum
       user: flagger
 
