@@ -56,7 +56,7 @@ spec:
         url: {{ .Values.canary.loadtest.url }}
         timeout: 5s
         metadata:
-          cmd: "hey -z 1m -q 5 -c 2 http://{{ template "app.fullname" . }}.{{ .Release.Namespace }}:{{ .Values.service.port }}"
+          cmd: "hey -z 1m -q 10 -c 2 http://{{ template "app.fullname" . }}-canary.{{ .Release.Namespace }}:{{ .Values.service.port }}"
       {{- end }}
     {{- end }}
 {{- end }}
