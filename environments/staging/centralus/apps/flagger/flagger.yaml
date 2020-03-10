@@ -29,15 +29,9 @@ spec:
        secretKeyRef:
          name: slack
          key: url
-    - name: SLACK_Channel
-      valueFrom:
-       secretKeyRef:
-         name: slack
-         key: channel
-    - name: SLACK_User
-      valueFrom:
-       secretKeyRef:
-         name: slack
-         key: user
+    slack:
+      url: 
+      channel: haisum
+      user: flagger
 
 
