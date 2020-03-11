@@ -43,8 +43,8 @@ spec:
     {{- if or (.Values.canary.helmtest.enabled ) (.Values.canary.loadtest.enabled) }}
     webhooks:
       {{- if .Values.canary.confirm.rollout.enabled }}
-      - name: "ask for confirmation"
-        type: confirm-rollout
+      - name: "confirm-pre-rollout"
+        type: pre-rollout
         url: {{.Values.canary.loadtest.url}}/gate/{{.Values.canary.confirm.rollout.status}}
       {{- end }}
       {{- if .Values.canary.helmtest.enabled }}
