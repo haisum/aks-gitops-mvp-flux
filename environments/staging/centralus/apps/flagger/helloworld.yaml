@@ -41,3 +41,7 @@ spec:
         enabled: true
         gateway: public-gateway.istio-system.svc.cluster.local
         host: helloworld.com
+      confirm:
+        rollout:
+          enabled: true
+          status: halt
