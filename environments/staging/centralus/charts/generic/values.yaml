@@ -67,6 +67,8 @@ canary:
     enabled: false
     iterations: 2
   confirm:
+    rollback:
+      status: halt
     promotion:
       enabled: false
       status: halt

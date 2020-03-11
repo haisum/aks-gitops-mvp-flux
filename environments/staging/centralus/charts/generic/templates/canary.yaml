@@ -51,6 +51,9 @@ spec:
       - name: "confirm-promotion"
         type: confirm-promotion
         url: {{.Values.canary.loadtest.url}}/gate/{{.Values.canary.confirm.promotion.status}}
+      - name: "rollback gate"
+        type: rollback
+        url: {{.Values.canary.loadtest.url}}/gate/{{.Values.canary.confirm.rollback.status}}
       {{- end }}
       {{- if .Values.canary.helmtest.enabled }}
       - name: "helm test"

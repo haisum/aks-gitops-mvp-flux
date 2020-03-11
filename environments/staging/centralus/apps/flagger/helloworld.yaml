@@ -44,6 +44,8 @@ spec:
       bluegreen:
         enabled: true
       confirm:
+        rollback:
+          status: halt
         promotion:
           enabled: true
-          status: approve
+          status: halt
