@@ -46,4 +46,4 @@ spec:
       confirm:
         promotion:
           enabled: true
-          status: halt
+          status: approve
