@@ -65,6 +65,7 @@ canary:
     url: http://flagger-helmtester-loadtester.kube-system/
   bluegreen:
     enabled: false
+    iterations: 2
   confirm:
     promotion:
       enabled: false

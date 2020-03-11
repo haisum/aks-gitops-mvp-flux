@@ -31,6 +31,9 @@ spec:
   analysis:
     interval: {{ .Values.canary.analysis.interval }}
     threshold: {{ .Values.canary.analysis.threshold }}
+    {{- if .Values.canary.bluegreen.enabled }}
+    iterations: {{ .Values.canary.bluegreen.iterations }}
+    {{- end }}
     {{- if not .Values.canary.bluegreen.enabled }}
     maxWeight: {{ .Values.canary.analysis.maxWeight }}
     stepWeight: {{ .Values.canary.analysis.stepWeight }}
