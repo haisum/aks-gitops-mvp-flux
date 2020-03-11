@@ -63,8 +63,10 @@ canary:
     enabled: false
     # helm tester address
     url: http://flagger-helmtester-loadtester.kube-system/
+  bluegreen:
+    enabled: false
   confirm:
-    rollout:
+    promotion:
       enabled: false
       status: halt
 

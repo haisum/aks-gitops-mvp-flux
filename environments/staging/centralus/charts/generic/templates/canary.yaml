@@ -31,8 +31,10 @@ spec:
   analysis:
     interval: {{ .Values.canary.analysis.interval }}
     threshold: {{ .Values.canary.analysis.threshold }}
+    {{- if not .Values.canary.bluegreen.enabled }}
     maxWeight: {{ .Values.canary.analysis.maxWeight }}
     stepWeight: {{ .Values.canary.analysis.stepWeight }}
+    {{- end }}
     metrics:
     - name: request-success-rate
       threshold: {{ .Values.canary.thresholds.successRate }}
@@ -42,10 +44,10 @@ spec:
       interval: 1m
     {{- if or (.Values.canary.helmtest.enabled ) (.Values.canary.loadtest.enabled) }}
     webhooks:
-      {{- if .Values.canary.confirm.rollout.enabled }}
-      - name: "confirm-pre-rollout"
-        type: pre-rollout
-        url: {{.Values.canary.loadtest.url}}/gate/{{.Values.canary.confirm.rollout.status}}
+      {{- if .Values.canary.confirm.promotion.enabled }}
+      - name: "confirm-promotion"
+        type: confirm-promotion
+        url: {{.Values.canary.loadtest.url}}/gate/{{.Values.canary.confirm.promotion.status}}
       {{- end }}
       {{- if .Values.canary.helmtest.enabled }}
       - name: "helm test"
