@@ -45,7 +45,7 @@ spec:
       {{- if .Values.canary.confirm.rollout.enabled }}
       - name: "ask for confirmation"
         type: confirm-rollout
-        url: {{.Values.canary.loadtest.url}}/gate/{{.Values.canary.confirmation.rollout.status}}
+        url: {{.Values.canary.loadtest.url}}/gate/{{.Values.canary.confirm.rollout.status}}
       {{- end }}
       {{- if .Values.canary.helmtest.enabled }}
       - name: "helm test"
