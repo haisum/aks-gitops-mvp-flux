@@ -42,7 +42,7 @@ spec:
       interval: 1m
     {{- if or (.Values.canary.helmtest.enabled ) (.Values.canary.loadtest.enabled) }}
     webhooks:
-      {{-if .Values.canary.confirm.rollout.enabled }}
+      {{- if .Values.canary.confirm.rollout.enabled }}
       - name: "ask for confirmation"
         type: confirm-rollout
         url: {{.Values.canary.loadtest.url}}/gate/{{.Values.canary.confirmation.rollout.status}}
