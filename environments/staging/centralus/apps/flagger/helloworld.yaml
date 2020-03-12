@@ -62,5 +62,5 @@ spec:
         rollback:
           status: halt
         promotion:
-          enabled: true
-          status: halt
+          enabled: false
+          status: approve
