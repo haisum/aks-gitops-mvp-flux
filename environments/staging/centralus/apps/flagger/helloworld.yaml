@@ -57,7 +57,7 @@ spec:
         gateway: public-gateway.istio-system.svc.cluster.local
         host: helloworld.com
       bluegreen:
-        enabled: true
+        enabled: false
       confirm:
         rollback:
           status: halt
