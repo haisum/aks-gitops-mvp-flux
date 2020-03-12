@@ -7,6 +7,8 @@ faults:
   delay: false
   error: false
 
+service:
+  httpPort: 9898
 
 image:
   repository: haisumb/helloworld
