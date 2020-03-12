@@ -8,7 +8,7 @@ faults:
   error: false
 
 service:
-  httpPort: 9898
+  port: 9898
 
 image:
   repository: haisumb/helloworld

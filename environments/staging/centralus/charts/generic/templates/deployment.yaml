@@ -30,7 +30,7 @@ spec:
         version: {{ .Values.version }}
       annotations:
         prometheus.io/scrape: "true"
-        prometheus.io/port: "{{ .Values.service.httpPort }}"
+        prometheus.io/port: "{{ .Values.service.port }}"
     spec:
       terminationGracePeriodSeconds: 30
       containers:
@@ -39,23 +39,18 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: {{ .Values.service.httpPort | default 9898 }}
+              containerPort: {{ .Values.service.port | default 9898 }}
               protocol: TCP
-            {{- if .Values.service.metricsPort }}
-            - name: http-metrics
-              containerPort: {{ .Values.service.metricsPort }}
-              protocol: TCP
-            {{- end }}
           livenessProbe:
             httpGet:
               path: /
-              port: {{ .Values.service.httpPort | default 9898 }}
+              port: {{ .Values.service.port | default 9898 }}
             initialDelaySeconds: 1
             timeoutSeconds: 5
           readinessProbe:
             httpGet:
               path: /
-              port: {{ .Values.service.httpPort | default 9898 }}
+              port: {{ .Values.service.port | default 9898 }}
             initialDelaySeconds: 1
             timeoutSeconds: 5
           resources:
