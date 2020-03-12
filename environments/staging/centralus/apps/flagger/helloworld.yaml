@@ -26,7 +26,7 @@ spec:
   values:
     image:
       repository: haisumb/helloworld
-      tag: feature-canary-20200311191147.53869430.7edbe8a
+      tag: feature-canary-20200311164826.53786588.41f7a00
     fullnameOverride: helloworld
     nameOverride: helloworld
     replicaCount: 2
@@ -42,10 +42,10 @@ spec:
         gateway: public-gateway.istio-system.svc.cluster.local
         host: helloworld.com
       bluegreen:
-        enabled: false
+        enabled: true
       confirm:
         rollback:
           status: halt
         promotion:
           enabled: true
-          status: approve
+          status: halt
