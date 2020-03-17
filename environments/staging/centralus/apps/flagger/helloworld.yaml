@@ -51,7 +51,7 @@ spec:
         enabled: true
       # Enable when we have helm tests
       helmtest:
-        enabled: false
+        enabled: true
       istioIngress:
         enabled: true
         gateway: public-gateway.istio-system.svc.cluster.local

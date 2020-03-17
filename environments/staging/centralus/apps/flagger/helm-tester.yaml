@@ -13,4 +13,6 @@ spec:
     repository: https://flagger.app
     name: loadtester
     version: 0.13.0
+  values:
+    serviceAccountName: helmtester
 
