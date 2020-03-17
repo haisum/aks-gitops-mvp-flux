@@ -41,7 +41,7 @@ spec:
   values:
     image:
       repository: haisumb/helloworld
-      tag: feature-canary-20200317155218.57574816.8d56a61
+      tag: feature-canary-20200317155308.57575227.cfffa47
     fullnameOverride: helloworld
     nameOverride: helloworld
     replicaCount: 2
