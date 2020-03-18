@@ -1,0 +1,32 @@
+---
+
+# helm install stable/fluent-bit \
+#      --name fluent-bit \
+#      --namespace logging \
+#      --set backend.type=es \
+#      --set backend.es.host=elasticsearch-master
+
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: fluent-bit
+  namespace: elastic-system
+spec:
+  releaseName: fluent-bit
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com
+    name: fluent-bit
+    version: 2.8.11
+  values:
+    backend:
+      type: es
+      es:
+        host: quickstart-es-http
+        http_user: elastic
+        http_passwd_secret: quickstart-es-elastic-user
+        http_passwd_secret_key: elastic
+        tls: on
+        tls_verify: off
+
+
+
