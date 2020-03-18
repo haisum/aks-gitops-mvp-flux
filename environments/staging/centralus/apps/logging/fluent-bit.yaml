@@ -25,8 +25,8 @@ spec:
         http_user: elastic
         http_passwd_secret: quickstart-es-elastic-user
         http_passwd_secret_key: elastic
-        tls: on
-        tls_verify: off
+        tls: "on"
+        tls_verify: "off"
 
 
 
