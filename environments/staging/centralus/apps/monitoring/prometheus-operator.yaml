@@ -13,13 +13,13 @@ spec:
     prometheus:
       prometheusSpec:
         storageSpec: 
-        volumeClaimTemplate:
-          spec:
-            storageClassName: default
-            accessModes: ["ReadWriteOnce"]
-            resources:
-              requests:
-                storage: 2Gi
+          volumeClaimTemplate:
+            spec:
+              storageClassName: default
+              accessModes: ["ReadWriteOnce"]
+              resources:
+                requests:
+                  storage: 2Gi
     alertmanager:
       alertmanagerSpec:
         storage:
