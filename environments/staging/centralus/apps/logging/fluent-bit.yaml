@@ -27,6 +27,7 @@ spec:
         http_passwd_secret_key: elastic
         tls: "on"
         tls_verify: "off"
+        time_key: "@time_key"
 
 
 
