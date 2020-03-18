@@ -1,7 +1,9 @@
 apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
 metadata:
+  # @todo change this
   name: quickstart
+  namespace: elastic-system
 spec:
   version: 7.6.1
   nodeSets:
