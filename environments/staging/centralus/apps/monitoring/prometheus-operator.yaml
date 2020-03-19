@@ -26,10 +26,10 @@ spec:
           kubernetes.io/ingress.class: istio
         hosts:
           - prometheus.tools.com
-        # tls:
-        #    - secretName: prometheus-general-tls
-        #      hosts:
-        #        - prometheus.tools.com
+        tls:
+           - secretName: tools-tls
+             hosts:
+               - prometheus.tools.com
     alertmanager:
       alertmanagerSpec:
         storage:
@@ -46,6 +46,10 @@ spec:
           kubernetes.io/ingress.class: istio
         hosts:
           - alertmanager.tools.com
+        tls:
+           - secretName: tools-tls
+             hosts:
+               - alertmanager.tools.com
     grafana:
       ingress:
         enabled: true
@@ -53,6 +57,10 @@ spec:
           kubernetes.io/ingress.class: istio
         hosts:
           - grafana.tools.com
+        tls:
+           - secretName: tools-tls
+             hosts:
+               - grafana.tools.com
 
 
 
