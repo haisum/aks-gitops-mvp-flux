@@ -6,6 +6,10 @@ metadata:
   namespace: elastic-system
 spec:
   version: 7.6.1
+  http:
+    tls:
+      certificate:
+        secretName: tools-wildcard
   nodeSets:
   - name: default
     count: 1
