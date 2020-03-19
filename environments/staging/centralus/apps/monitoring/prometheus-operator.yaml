@@ -12,6 +12,7 @@ spec:
   values:
     prometheus:
       prometheusSpec:
+        portName: http
         storageSpec: 
           volumeClaimTemplate:
             spec:
@@ -26,12 +27,9 @@ spec:
           kubernetes.io/ingress.class: istio
         hosts:
           - prometheus.tools.com
-        tls:
-           - secretName: tools-tls
-             hosts:
-               - prometheus.tools.com
     alertmanager:
       alertmanagerSpec:
+        portName: http
         storage:
           volumeClaimTemplate:
             spec:
@@ -46,21 +44,15 @@ spec:
           kubernetes.io/ingress.class: istio
         hosts:
           - alertmanager.tools.com
-        tls:
-           - secretName: tools-tls
-             hosts:
-               - alertmanager.tools.com
     grafana:
+      service:
+        portName: http
       ingress:
         enabled: true
         annotations:
           kubernetes.io/ingress.class: istio
         hosts:
           - grafana.tools.com
-        tls:
-           - secretName: tools-tls
-             hosts:
-               - grafana.tools.com
 
 
 
