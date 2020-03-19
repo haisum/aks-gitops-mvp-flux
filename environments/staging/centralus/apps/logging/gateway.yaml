@@ -10,7 +10,7 @@ spec:
   - hosts:
     - 'elasticsearch.tools.com'
     port:
-      name: https-default
+      name: https-passthrough
       number: 443
       protocol: HTTPS
     tls:
