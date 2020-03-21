@@ -21,6 +21,17 @@ spec:
               resources:
                 requests:
                   storage: 2Gi
+        thanos:
+          baseImage: quay.io/thanos/thanos
+          version: v0.10.1
+          objectStorageConfig:
+            key: thanos.yaml
+            name: thanos-objstore-config
+      service:
+        additionalPorts:
+          - name: thanos-http
+            port: 10901
+            targetPort: 10901
       ingress:
         enabled: true
         annotations:
