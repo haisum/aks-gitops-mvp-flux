@@ -30,8 +30,8 @@ spec:
       service:
         additionalPorts:
           - name: thanos-http
-            port: 10901
-            targetPort: 10901
+            port: 10902
+            targetPort: 10902
       ingress:
         enabled: true
         annotations:
