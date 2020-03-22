@@ -5,9 +5,9 @@ metadata:
   name: sealed-secrets-backup
   namespace: velero
 spec:
-  schedule: '@every 12h'
+  schedule: '@every 30m'
   template:
     hooks: {}
     includedNamespaces:
     - sealed-secrets
-    ttl: 720h0m0s
+    ttl: 24h0m0s
