@@ -29,6 +29,9 @@ spec:
             name: thanos-objstore-config
       service:
         additionalPorts:
+          - name: thanos-grpc
+            port: 10901
+            targetPort: 10901
           - name: thanos-http
             port: 10902
             targetPort: 10902
