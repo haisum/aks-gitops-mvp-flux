@@ -1,0 +1,65 @@
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    istio-injection: enabled
+  name: feature-canary
+
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: helloworld
+  namespace: feature-canary
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: glob:feature-canary-*
+spec:
+  releaseName: helloworld
+  chart:
+    git: git@github.com:haisumb/aks-gitops-mvp-flux
+    path: environments/staging/centralus/charts/generic
+    ref: master
+  rollback:
+    # If set, will perform rollbacks for this release.
+    enable: true
+    # If set, will force resource update through delete/recreate if
+    # needed.
+    force: false
+    # Prevent hooks from running during rollback.
+    disableHooks: true
+    # Time in seconds to wait for any individual Kubernetes operation.
+    timeout: 300
+    # If set, will wait until all Pods, PVCs, Services, and minimum
+    # number of Pods of a Deployment are in a ready state before
+    # marking the release as successful. It will wait for as long
+    # as the set timeout.
+    wait: true
+  values:
+    image:
+      repository: haisumb/helloworld
+      tag: feature-canary-0a392ce7f29662c549b980e7047354a1e280ef0f
+    fullnameOverride: helloworld
+    nameOverride: helloworld
+    replicaCount: 
+    canary:
+      enabled: false
+      loadtest:
+        enabled: true
+      # Enable when we have helm tests
+      helmtest:
+        enabled: false
+      istioIngress:
+        enabled: true
+        gateway: public-gateway.istio-system.svc.cluster.local
+        host: feature-canary.helloworld.com
+      bluegreen:
+        enabled: false
+      confirm:
+        rollback:
+          status: halt
+        promotion:
+          enabled: false
+          status: approve
