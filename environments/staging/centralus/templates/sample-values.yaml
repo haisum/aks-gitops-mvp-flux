@@ -1,0 +1,20 @@
+automated: "true"
+branch: feature-canary
+app:
+  name: helloworld
+  host: feature-canary.helloworld.com
+chart:
+  repo: git@github.com:haisumb/aks-gitops-mvp-flux
+  path: environments/staging/centralus/charts/generic
+  ref: master
+image:
+  repo: haisumb/helloworld
+  tag: feature-canary-git-sha-here
+canary:
+  enabled: "false"
+  bluegreen:
+    enabled: "false"
+  promotion:
+    enabled: "false"
+    status: approve
+

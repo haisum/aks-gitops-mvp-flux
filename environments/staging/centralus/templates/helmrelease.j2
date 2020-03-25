@@ -14,14 +14,14 @@ metadata:
   name: {{ app.name }}
   namespace: {% if branch == "master" %}default{% else %}{{ branch }}{% endif %}
   annotations:
-    fluxcd.io/automated: "{{ flux.automated }}"
+    fluxcd.io/automated: "{{ automated }}"
     filter.fluxcd.io/chart-image: glob:{{ branch }}-*
 spec:
   releaseName: {{ app.name }}
   chart:
-    git: {{ flux.repo }}
-    path: {{ flux.path }}
-    ref: master
+    git: {{ chart.repo }}
+    path: {{ chart.path }}
+    ref: {{ chart.ref }}
   rollback:
     # If set, will perform rollbacks for this release.
     enable: true
@@ -56,7 +56,7 @@ spec:
         gateway: public-gateway.istio-system.svc.cluster.local
         host: {{ app.host }}
       bluegreen:
-        enabled: {{ canaray.bluegreen.enabled }}
+        enabled: {{ canary.bluegreen.enabled }}
       confirm:
         rollback:
           status: halt
