@@ -1,0 +1,65 @@
+{%if branch != "master" %}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    istio-injection: enabled
+  name: {{ branch }}
+{% endif %}
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: {{ app.name }}
+  namespace: {% if branch == "master" %}default{% else %}{{ branch }}{% endif %}
+  annotations:
+    fluxcd.io/automated: "{{ flux.automated }}"
+    filter.fluxcd.io/chart-image: glob:{{ branch }}-*
+spec:
+  releaseName: {{ app.name }}
+  chart:
+    git: {{ flux.repo }}
+    path: {{ flux.path }}
+    ref: master
+  rollback:
+    # If set, will perform rollbacks for this release.
+    enable: true
+    # If set, will force resource update through delete/recreate if
+    # needed.
+    force: false
+    # Prevent hooks from running during rollback.
+    disableHooks: true
+    # Time in seconds to wait for any individual Kubernetes operation.
+    timeout: 300
+    # If set, will wait until all Pods, PVCs, Services, and minimum
+    # number of Pods of a Deployment are in a ready state before
+    # marking the release as successful. It will wait for as long
+    # as the set timeout.
+    wait: true
+  values:
+    image:
+      repository: {{ image.repo }}
+      tag: {{ image.tag }}
+    fullnameOverride: {{ app.name }}
+    nameOverride: {{ app.name }}
+    replicaCount: {{ app.replicaCount }}
+    canary:
+      enabled: {{ canary.enabled }}
+      loadtest:
+        enabled: true
+      # Enable when we have helm tests
+      helmtest:
+        enabled: false
+      istioIngress:
+        enabled: true
+        gateway: public-gateway.istio-system.svc.cluster.local
+        host: {{ app.host }}
+      bluegreen:
+        enabled: {{ canaray.bluegreen.enabled }}
+      confirm:
+        rollback:
+          status: halt
+        promotion:
+          enabled: {{ canary.promotion.enabled }}
+          status: {{ canary.promotion.status }}
