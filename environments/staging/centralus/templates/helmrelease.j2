@@ -1,18 +1,18 @@
-{%if branch != "master" %}
+{%if namespace != "default" %}
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
   labels:
     istio-injection: enabled
-  name: {{ branch }}
+  name: {{ namespace }}
 {% endif %}
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: {{ app.name }}
-  namespace: {% if branch == "master" %}default{% else %}{{ branch }}{% endif %}
+  namespace: {{ namespace }}
   annotations:
     fluxcd.io/automated: "{{ automated }}"
     filter.fluxcd.io/chart-image: glob:{{ branch }}-*
