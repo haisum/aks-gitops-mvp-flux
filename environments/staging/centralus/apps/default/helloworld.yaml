@@ -1,21 +1,13 @@
 
 ---
-apiVersion: v1
-kind: Namespace
-metadata:
-  labels:
-    istio-injection: enabled
-  name: feature-demo-pipeline
-
----
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: helloworld
-  namespace: feature-demo-pipeline
+  namespace: default
   annotations:
-    fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: glob:feature-demo-pipeline-*
+    fluxcd.io/automated: "false"
+    filter.fluxcd.io/chart-image: glob:feature-test-*
 spec:
   releaseName: helloworld
   chart:
@@ -40,7 +32,7 @@ spec:
   values:
     image:
       repository: haisumb/helloworld
-      tag: feature-demo-pipeline-350326315d02475e3f77b49e61ef7ef249a740f3
+      tag: feature-test-4202fa0a76dd5703803b5a4c2dfa6dbc986315d1
     fullnameOverride: helloworld
     nameOverride: helloworld
     replicaCount: 
