@@ -1,4 +1,3 @@
-
 ---
 apiVersion: v1
 kind: Namespace
@@ -6,7 +5,6 @@ metadata:
   labels:
     istio-injection: enabled
   name: feature-test
-
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -40,10 +38,10 @@ spec:
   values:
     image:
       repository: haisumb/helloworld
-      tag: feature-test-141a7a534a08e34b310221da894a070fac6ff22f
+      tag: feature-test-4202fa0a76dd5703803b5a4c2dfa6dbc986315d1
     fullnameOverride: helloworld
     nameOverride: helloworld
-    replicaCount: 
+    replicaCount:
     canary:
       enabled: false
       loadtest:

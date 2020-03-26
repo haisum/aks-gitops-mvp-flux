@@ -38,7 +38,7 @@ spec:
   values:
     image:
       repository: haisumb/helloworld
-      tag: feature-demo-pipeline-843fda57a18f69e989f27ab42d02140eeb662927
+      tag: feature-demo-pipeline-350326315d02475e3f77b49e61ef7ef249a740f3
     fullnameOverride: helloworld
     nameOverride: helloworld
     replicaCount:
