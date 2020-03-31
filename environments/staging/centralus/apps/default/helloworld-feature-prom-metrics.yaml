@@ -32,12 +32,12 @@ spec:
   values:
     image:
       repository: haisumb/helloworld
-      tag: feature-prom-metrics-0a3202e71b4f631d779e005f01c2f4f0177beea8
+      tag: feature-prom-metrics-eea4cc574a2acafce29f5bd9300dfd176d3e3b61
     fullnameOverride: helloworld-feature-prom-metrics
     nameOverride: helloworld-feature-prom-metrics
     replicaCount: 
     canary:
-      enabled: false
+      enabled: true
       loadtest:
         enabled: true
       # Enable when we have helm tests
