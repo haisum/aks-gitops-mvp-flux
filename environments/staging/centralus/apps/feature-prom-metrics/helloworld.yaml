@@ -1,4 +1,3 @@
-
 ---
 apiVersion: v1
 kind: Namespace
@@ -6,7 +5,6 @@ metadata:
   labels:
     istio-injection: enabled
   name: feature-prom-metrics
-
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -40,10 +38,10 @@ spec:
   values:
     image:
       repository: haisumb/helloworld
-      tag: feature-prom-metrics-2df61ab816565bee56f9b8bb1719572c9788ba10
+      tag: feature-prom-metrics-c0bb99a9b0da5536b55fcf756d885b9f2d2eff62
     fullnameOverride: helloworld
     nameOverride: helloworld
-    replicaCount: 
+    replicaCount:
     canary:
       enabled: true
       loadtest:
