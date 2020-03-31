@@ -7,7 +7,7 @@ metadata:
   namespace: default
   annotations:
     fluxcd.io/automated: "false"
-    filter.fluxcd.io/chart-image: glob:feature-test-*
+    filter.fluxcd.io/chart-image: glob:feature-prom-metrics-*
 spec:
   releaseName: helloworld
   chart:
@@ -32,7 +32,7 @@ spec:
   values:
     image:
       repository: haisumb/helloworld
-      tag: feature-test-4202fa0a76dd5703803b5a4c2dfa6dbc986315d1
+      tag: feature-prom-metrics-b690bd63813ac1e19306cb1261d0b3a189359a29
     fullnameOverride: helloworld
     nameOverride: helloworld
     replicaCount: 
