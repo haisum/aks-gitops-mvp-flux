@@ -32,7 +32,7 @@ spec:
   values:
     image:
       repository: haisumb/helloworld
-      tag: feature-prom-metrics-2df61ab816565bee56f9b8bb1719572c9788ba10
+      tag: feature-prom-metrics-0d7947033bbafcfa34bc45cb66ce1725a8d080af
     fullnameOverride: helloworld-feature-prom-metrics
     nameOverride: helloworld-feature-prom-metrics
     replicaCount: 
