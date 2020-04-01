@@ -27,6 +27,7 @@ spec:
           objectStorageConfig:
             key: thanos.yaml
             name: thanos-objstore-config
+        serviceMonitorSelectorNilUsesHelmValues: false
       service:
         additionalPorts:
           - name: thanos-grpc
